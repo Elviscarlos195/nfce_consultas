@@ -1,5 +1,5 @@
 
-import ReplaceAll from '../extensoes';
+
 const puppeteer = require('puppeteer');
 
   async function handler(req, res) {
