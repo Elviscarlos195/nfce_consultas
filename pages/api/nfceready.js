@@ -5,7 +5,9 @@ const puppeteer = require('puppeteer');
   async function handler(req, res) {
     if(req.method ==='POST'){
         console.log(req.method);
-        const browser = await puppeteer.launch({headless: true});
+        const browser = await puppeteer.launch({
+            executablePath: './chrome/.local-chromium/win64-901912/chrome-win/chrome.exe',
+            headless: true });            
         const page = await browser.newPage();
         let url = req.body.data;
 
@@ -13,8 +15,6 @@ const puppeteer = require('puppeteer');
         //await page.goto({url: 'http://app.sefaz.es.gov.br/ConsultaNFCe/qrcode.aspx?p=32210606955576001080651230001274811761890230|2|1|1|BEF56549DC43B8470BC2B2D4D921951CC720755A', options: {waitUntil:'networkidle2', timeout: 0}});
         await page.goto(url.url.toString(), {waitUntil: 'networkidle2', timeout: 0});
            
-        
-        
         const pageContent = await page.evaluate(() => {  
              var prd =  [];          
             
