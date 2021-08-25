@@ -63,12 +63,7 @@ async function handler(req, res) {
     res.status(200).json(pageContent);
   } else {
     res.status(200).json(req.body);
-  } //res.status(200).text(url);
-
-}
-
-function remove(name) {
-  return name;
+  }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handler);

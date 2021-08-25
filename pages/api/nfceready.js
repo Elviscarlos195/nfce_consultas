@@ -51,15 +51,10 @@ const puppeteer = require('puppeteer');
     }
     else{
         res.status(200).json(req.body);
-    }
-    
-    
-    //res.status(200).text(url);
+    }    
   }
 
 
-  function remove(name){
-      return name;
-  }
+
 
 export default handler;
