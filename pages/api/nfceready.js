@@ -1,14 +1,18 @@
 
 
-const puppeteer = require('puppeteer');
+const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 
   async function handler(req, res) {
     if(req.method ==='POST'){
         console.log(req.method);
-        const browser = await puppeteer.launch({
-            executablePath: './chrome/.local-chromium/win64-901912/chrome-win/chrome.exe',
-            headless: true,
-        ignoreHTTPSErrors: true });            
+        const browser = await puppeteer.launch({ 
+               args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: './chrome/.local-chromium/win64-901912/chrome-win/chrome.exe',
+        headless: true,
+        ignoreHTTPSErrors: true,
+        });            
         const page = await browser.newPage();
         let url = req.body.data;
 
