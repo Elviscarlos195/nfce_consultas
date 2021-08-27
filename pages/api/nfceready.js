@@ -7,7 +7,8 @@ const puppeteer = require('puppeteer');
         console.log(req.method);
         const browser = await puppeteer.launch({
             executablePath: './chrome/.local-chromium/win64-901912/chrome-win/chrome.exe',
-            headless: true });            
+            headless: true,
+        ignoreHTTPSErrors: true });            
         const page = await browser.newPage();
         let url = req.body.data;
 
