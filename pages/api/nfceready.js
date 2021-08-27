@@ -9,7 +9,7 @@ const puppeteer = require('puppeteer-core');
         const browser = await puppeteer.launch({ 
                args: chromium.args,
         defaultViewport: chromium.defaultViewport,
-        executablePath: './chrome/local-chromium/win64-901912/chrome-win/chrome.exe',
+        executablePath: './chrome/win64-901912/chrome-win/chrome.exe',
         headless: true,
         ignoreHTTPSErrors: true,
         });            
